@@ -1,36 +1,4 @@
-.jumbotron {
-    background: #532F8C;
-    color: white;
-    padding-bottom: 80px;
-}
-.jumbotron .btn-primary {
-    background: #845ac7;
-    border-color: #845ac7;
-}
-.jumbotron .btn-primary:hover {
-    background: #7646c1;
-}
-.jumbotron p {
-    color: #d9ccee;
-    max-width: 75%;
-    margin: 1em auto 2em;
-}
-.navbar + .jumbotron {
-    margin-top: -20px;
-}
-.jumbotron .lang-logo {
-    display: block;
-    background: #B01302;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    border: 2px solid white;
-}
-.jumbotron .lang-logo img {
-    max-width: 100%;
-}
+
 html {
     height: 100%;
     width: 100%;
@@ -44,6 +12,20 @@ html {
 }
 body {
     background: transparent;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.contain{
+  height: 100%;
+  width: 100%;
+  background: url(/img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: bottom;
+  background-image: linear-gradient(to bottom, rgba(61, 22, 114, 1) 0%, rgba(38, 33, 61, 0.52) 100%), url(/img/bg.jpg);
 }
 #main {
     width: 100%;
@@ -52,7 +34,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 50px;
-}
+  }
 #blueDiv {
     color: #fff;
     overflow: hidden;
@@ -106,6 +88,7 @@ nav li{
   border-radius: 5px;
   margin: 0 5px;
   cursor: pointer;
+  text-align: center;
 
 }
 nav li:hover {
@@ -124,6 +107,7 @@ nav li .hoverbg{
   transform: translate(0,200px);
   transition: transform .4s, opacity 2s;
 }
+
 nav li:hover .hoverbg{
   position: absolute;
   top: 0;
@@ -131,6 +115,39 @@ nav li:hover .hoverbg{
   z-index: -230;
   width: 100%;
   height: 100%;
+  -ms-transform: translate(0,0); /* IE 9 */
+  -webkit-transform: translate(0,0); /* Safari */
+  transform: translate(0,0);
+}
+
+.work{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  z-index: -100;
+  background: red;
+}
+
+.resume{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  z-index: -101;
+  background: blue;
+  -ms-transform: translate(0,100%); /* IE 9 */
+  -webkit-transform: translate(0,100%); /* Safari */
+  transform: translate(0,100%);
+  transition: transform 1.5s, z-index 1s;
+}
+.resume.active{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  z-index: 101;
+  background: #fff;
   -ms-transform: translate(0,0); /* IE 9 */
   -webkit-transform: translate(0,0); /* Safari */
   transform: translate(0,0);
