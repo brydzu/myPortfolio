@@ -13,12 +13,15 @@
 <body>
 
     <% include ../partials/nav.ejs %>
+        <div class="loaderr">
+          <div class="loader">Loading...</div>
+        </div>
         <div class="contain">
 
 
             <div id="main">
                 <div id="blueDiv">
-                    <h1>Joe Santos Garcia</h1>
+                    <h1>Joe Santos Garcia2</h1>
                 </div>
             </div>
 
@@ -31,8 +34,14 @@
             </div>
 
         </div>
+
 </body>
+
 <script>
+    $(window).load(function() {
+
+
+    });
     $(document).ready(function() {
         $.ajax({
             type: 'get',
@@ -55,6 +64,15 @@
     });
 
     $(window).load(function(e) {
+        // $(".loader").fadeOut("slow");
+        $(".loaderr").addClass('active');
+
+        function displaynone() {
+            $(".loaderr").css('display', 'none');
+        }
+        setTimeout(displaynone, 1000);
+
+
         setTimeout(nameFade, 1000);
 
         function nameFade() {
