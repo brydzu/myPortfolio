@@ -152,8 +152,8 @@ nav li:hover .hoverbg{
   -ms-transform: translate(0,100%); /* IE 9 */
   -webkit-transform: translate(0,100%); /* Safari */
   transform: translate(0,100%);
-  transition: transform 1.5s, z-index 1s, opacity 1s;
-  opacity: 0;
+  transition: transform 1.5s cubic-bezier(.74,0,.41,1), z-index 1s cubic-bezier(.74,0,.41,1), opacity 1s cubic-bezier(.57,.05,.1,.99);
+  opacity: 1;
   overflow: auto;
 }
 .work.active{
