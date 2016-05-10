@@ -3,23 +3,36 @@ $(window).load(function() {
 
 });
 $(document).ready(function() {
-    $.ajax({
-        type: 'get',
-        url: 'test.html',
-        beforeSend: function() {
-            $('#image').show();
-        },
-        complete: function() {
-            $('#image').hide();
-        },
-        // success: function(html) {
-        //     $('.info').append(html);
-        // },
-        success: function(response) {
-            // response = data which has been received and passed on to the 'success' function.
-            $('#main').html(response);
-        }
-    });
+
+  var work = $('.work');
+  $(document).on('click', '.work-btn', function() {
+      console.log('swags');
+      work.addClass('active');
+
+
+      $.ajax({
+          type: 'get',
+          url: 'templates/work/index.html',
+          beforeSend: function() {
+              $('.loaderr').show();
+          },
+          complete: function() {
+              $('.loaderr').hide();
+          },
+          success: function(response) {
+            console.log('added');
+              // response = data which has been received and passed on to the 'success' function.
+              work.html(response);
+          }
+      });
+  });
+
+
+  $(document).on('click', '.typcn-times-outline', function() {
+      // console.log('swags');
+      work.removeClass('active');
+  });
+
 
 });
 
@@ -76,10 +89,7 @@ $(window).load(function(e) {
         console.log(pages.work);
         console.log(pages.super);
     })();
-    $(document).on('click', '.work-btn', function() {
-        console.log('swags');
-        $('.work').addClass('active');
-    })
+
 
 
 });
