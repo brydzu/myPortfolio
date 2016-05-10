@@ -43,6 +43,36 @@ body {
   font-size: 50px;
 }
 
+.userimg {
+  text-align: center;
+}
+.userimg img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  border: 2px solid #fff;
+  transition: transform 1s;
+  transform: scale(0);
+  animation: userfly 3s ease-in 0s 1 alternate forwards running;
+}
+.userimg img.active {
+  transform: scale(1);
+}
+
+@keyframes userfly {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.05);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #blueDiv {
   color: #fff;
   overflow: hidden;
@@ -292,7 +322,7 @@ nav li:hover .hoverbg {
   right: 50px;
   top: 0;
   color: #acadb1;
-  transition: color .5s;
+  transition: color 0.5s;
 }
 .typcn-times-outline:hover {
   color: #3d1672;
