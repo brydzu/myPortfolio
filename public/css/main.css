@@ -300,6 +300,10 @@ nav li:hover .hoverbg {
   bottom: 0;
 }
 
+.blog {
+  color: #fff;
+}
+
 @keyframes load {
   0% {
     left: 0;

@@ -3,17 +3,21 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var BookSchema = new Schema({
+var PostSchema = new Schema({
     title: {
         type: String,
         required: true,
         unique: true,
     },
+    content: {
+        type: String,
+        required: true
+    },
     category: {
         type: String,
         required: true,
     },
-    published: {
+    date: {
         type: Date,
         default: Date.now
     },
@@ -21,14 +25,7 @@ var BookSchema = new Schema({
     published: Boolean,
     author: {
         type: String
-    },
-    //embedded sub documents
-    detai: {
-        modelNumber: Number,
-        hardcover: Boolean,
-        reviews: Number,
-        rank: Number
     }
 });
 
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Post', PostSchema);
