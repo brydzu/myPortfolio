@@ -18,6 +18,22 @@ router.get('/', function(request, response) {
 
 });
 
+router.get('/:id', function(request, response) {
+    PostModel.find({ _id: request.params.id }, function(err, docs) {
+        if (!err) {
+            console.log('This that shit' + docs);
+            // process.exit();
+            response.render('pages/single', {
+                allpost: docs
+            });
+        } else {
+            throw err;
+        }
+    });
+
+
+});
+
 router.post('/post', function(request, response) {
 
     console.log(request.body.title + ' ' + request.body.content + ' ' + request.body.category + ' ');

@@ -284,6 +284,12 @@ nav li:hover .hoverbg {
 }
 .blog{
   color: #fff;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  li{
+    list-style: none;
+  }
 }
 @keyframes load {
     0% {
