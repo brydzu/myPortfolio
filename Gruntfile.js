@@ -3,11 +3,39 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        webpack: {
+            somename: {
+                entry: [
+                    './src/js/app.jsx'
+                ],
+                output: {
+                    path: __dirname + "/public",
+                    filename: 'bundle.js'
+                },
+                module: {
+                    loaders: [{
+                        exclude: /node_modules/,
+                        loader: 'babel',
+                        query: {
+                            presets: ['react', 'es2015', 'stage-1']
+                        }
+                    }]
+                },
+                resolve: {
+                    extensions: ['', '.js', '.jsx']
+                },
+                devServer: {
+                    historyApiFallback: true,
+                    contentBase: './'
+                }
+            }
+
+        },
 
         concat: {
             js: {
                 src: [
-                    'src/js/app.js'
+                    'bundle.js'
                 ],
                 dest: 'public/js/final.js'
 
@@ -30,9 +58,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        autoprefixer: {
+            dist: {
+                files: {
+                    'public/css/final2.css': 'public/css/final.css'
+                }
+            }
+        },
         watch: {
-            ts: {
-                files: ['src/js/**/*.ts'],
+            jsx: {
+                files: ['src/**/*.jsx'],
                 tasks: ['default']
             },
             js: {
@@ -70,7 +105,7 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'public/css/final.min.css': ['public/css/final.css']
+                    'public/css/final.min.css': ['public/css/final2.css']
                 }
             }
         }
@@ -78,14 +113,15 @@ module.exports = function(grunt) {
     grunt.registerTask('speak', function() {
         console.log('speak');
     });
+    grunt.loadNpmTasks("grunt-webpack");
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks("grunt-ts");
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
-    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['webpack', 'sass', 'concat', 'autoprefixer', 'uglify', 'cssmin', 'watch']);
 
 
 };
