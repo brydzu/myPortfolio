@@ -23,6 +23,7 @@ html {
   font-family: 'Amatic SC', cursive;
   -webkit-transition: all 1s;
           transition: all 1s;
+  z-index: 1000;
 }
 .MenuComp.start {
   width: 350px;

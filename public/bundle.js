@@ -46401,6 +46401,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(204);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46428,27 +46430,6 @@
 	    }
 
 	    _createClass(Menu, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            //  var x = ReactDOM.findDOMNode(this.refs.author);
-	            var tl = new TimelineLite();
-
-	            var $MenuComp = $('.MenuComp');
-	            var $upperbox = $('.upperbox');
-	            var $navigation = $('.navigation');
-
-	            tl.to($MenuComp, 0, {
-	                className: '+=start',
-	                delay: 1
-	            }).to($upperbox, .3, {
-	                className: '+=start'
-	            }).to($navigation, .3, {
-	                className: '+=start',
-	                delay: .4
-	            });
-	            // $body, {className: '-=loading'}
-	        }
-	    }, {
 	        key: 'updateInputs',
 	        value: function updateInputs(key, event) {}
 	    }, {
@@ -46479,23 +46460,23 @@
 	                    'nav',
 	                    { className: 'navigation' },
 	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
+	                        _reactRouter.Link,
+	                        { to: 'work' },
 	                        'Work'
 	                    ),
 	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
+	                        _reactRouter.Link,
+	                        { to: '/' },
 	                        'Resume'
 	                    ),
 	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
+	                        _reactRouter.Link,
+	                        { to: 'projects' },
 	                        'Projects'
 	                    ),
 	                    _react2.default.createElement(
-	                        'a',
-	                        { href: '' },
+	                        _reactRouter.Link,
+	                        { to: 'contacts' },
 	                        'Contacts'
 	                    )
 	                )
@@ -46557,30 +46538,6 @@
 	    }
 
 	    _createClass(Home, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            //  var x = ReactDOM.findDOMNode(this.refs.author);
-	            var tl = new TimelineLite();
-
-	            var $HomeComp = $('.HomeComp');
-	            var $upperbox = $('.upperbox');
-	            var $navigation = $('.navigation');
-	            // const $HomeComp = $('.HomeComp');
-
-	            tl.to($HomeComp, 0, {
-	                className: '+=start',
-	                delay: 1
-	            }).to($upperbox, .3, {
-	                className: '+=start'
-	            }).to($navigation, .3, {
-	                className: '+=start',
-	                delay: .4
-	            }).to($HomeComp, 0, {
-	                opacity: 1
-	            });
-	            // $body, {className: '-=loading'}
-	        }
-	    }, {
 	        key: 'updateInputs',
 	        value: function updateInputs(key, event) {}
 	    }, {
@@ -46671,24 +46628,51 @@
 	    }
 
 	    _createClass(Work, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
+	        key: 'startmenu',
+	        value: function startmenu() {
 	            //  var x = ReactDOM.findDOMNode(this.refs.author);
 	            var tl = new TimelineLite();
 
-	            var $WorkComp = $('.WorkComp');
+	            var $MenuComp = $('.MenuComp');
 	            var $upperbox = $('.upperbox');
 	            var $navigation = $('.navigation');
 
-	            tl.to($WorkComp, 0, {
+	            tl.to($MenuComp, 0, {
 	                className: '+=start',
 	                delay: 1
-	            }).to($upperbox, .3, { className: '+=start' }).to($navigation, .3, {
+	            }).to($upperbox, .3, {
+	                className: '+=start'
+	            }).to($navigation, .3, {
 	                className: '+=start',
 	                delay: .4
 	            });
 	            // $body, {className: '-=loading'}
 	        }
+	        // turnoffmenu(){
+	        //   //  var x = ReactDOM.findDOMNode(this.refs.author);
+	        //   var tl = new TimelineLite();
+	        //
+	        //   const $MenuComp = $('.MenuComp');
+	        //   const $upperbox = $('.upperbox');
+	        //   const $navigation = $('.navigation');
+	        //
+	        //   tl.to($MenuComp, 0, {
+	        //       className: '-=start',
+	        //       delay: 1
+	        //   }).to($upperbox, .3, {
+	        //       className: '-=start'
+	        //   }).to($navigation, .3, {
+	        //       className: '-=start',
+	        //       delay: .4
+	        //   });
+	        // }
+	        // componentDidMount() {
+	        //   this.startmenu();
+	        // }
+	        // componentWillUnmount(){
+	        //   this.turnoffmenu();
+	        // }
+
 	    }, {
 	        key: 'updateInputs',
 	        value: function updateInputs(key, event) {}
@@ -46970,6 +46954,57 @@
 	    }
 
 	    _createClass(App, [{
+	        key: 'startmenu',
+	        value: function startmenu() {
+	            //  var x = ReactDOM.findDOMNode(this.refs.author);
+	            var tl = new TimelineLite();
+
+	            var $MenuComp = (0, _jquery2.default)('.MenuComp');
+	            var $upperbox = (0, _jquery2.default)('.upperbox');
+	            var $navigation = (0, _jquery2.default)('.navigation');
+
+	            tl.to($MenuComp, 0, {
+	                className: '+=start',
+	                delay: 1
+	            }).to($upperbox, .3, {
+	                className: '+=start'
+	            }).to($navigation, .3, {
+	                className: '+=start',
+	                delay: .4
+	            });
+	            // $body, {className: '-=loading'}
+	        }
+	    }, {
+	        key: 'turnoffmenu',
+	        value: function turnoffmenu() {
+	            //  var x = ReactDOM.findDOMNode(this.refs.author);
+	            var tl = new TimelineLite();
+
+	            var $MenuComp = (0, _jquery2.default)('.MenuComp');
+	            var $upperbox = (0, _jquery2.default)('.upperbox');
+	            var $navigation = (0, _jquery2.default)('.navigation');
+
+	            tl.to($MenuComp, 0, {
+	                className: '-=start',
+	                delay: 1
+	            }).to($upperbox, .3, {
+	                className: '-=start'
+	            }).to($navigation, .3, {
+	                className: '-=start',
+	                delay: .4
+	            });
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.startmenu();
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.turnoffmenu();
+	        }
+	    }, {
 	        key: 'loadData',
 	        value: function loadData() {}
 	    }, {

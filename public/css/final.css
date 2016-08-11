@@ -22,6 +22,7 @@ html {
   background: yellow;
   font-family: 'Amatic SC', cursive;
   transition: all 1s;
+  z-index: 1000;
 }
 .MenuComp.start {
   width: 350px;

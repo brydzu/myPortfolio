@@ -10,23 +10,49 @@ class Work extends Component {
 
         // this.updateInputs = this.updateInputs.bind(this);
     }
-    componentDidMount() {
-        //  var x = ReactDOM.findDOMNode(this.refs.author);
-        var tl = new TimelineLite();
+    startmenu(){
+      //  var x = ReactDOM.findDOMNode(this.refs.author);
+      var tl = new TimelineLite();
 
-        const $WorkComp = $('.WorkComp');
-        const $upperbox = $('.upperbox');
-        const $navigation = $('.navigation');
+      const $MenuComp = $('.MenuComp');
+      const $upperbox = $('.upperbox');
+      const $navigation = $('.navigation');
 
-        tl.to($WorkComp, 0, {
-            className: '+=start',
-            delay: 1
-        }).to($upperbox, .3, {className: '+=start'}).to($navigation, .3, {
-            className: '+=start',
-            delay: .4
-        });
-        // $body, {className: '-=loading'}
+      tl.to($MenuComp, 0, {
+          className: '+=start',
+          delay: 1
+      }).to($upperbox, .3, {
+          className: '+=start'
+      }).to($navigation, .3, {
+          className: '+=start',
+          delay: .4
+      });
+      // $body, {className: '-=loading'}
     }
+    // turnoffmenu(){
+    //   //  var x = ReactDOM.findDOMNode(this.refs.author);
+    //   var tl = new TimelineLite();
+    //
+    //   const $MenuComp = $('.MenuComp');
+    //   const $upperbox = $('.upperbox');
+    //   const $navigation = $('.navigation');
+    //
+    //   tl.to($MenuComp, 0, {
+    //       className: '-=start',
+    //       delay: 1
+    //   }).to($upperbox, .3, {
+    //       className: '-=start'
+    //   }).to($navigation, .3, {
+    //       className: '-=start',
+    //       delay: .4
+    //   });
+    // }
+    // componentDidMount() {
+    //   this.startmenu();
+    // }
+    // componentWillUnmount(){
+    //   this.turnoffmenu();
+    // }
 
     updateInputs(key, event) {}
 
