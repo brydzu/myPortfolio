@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         webpack: {
             somename: {
                 entry: [
-                    './src/js/app.jsx'
+                    './src/js/index.jsx'
                 ],
                 output: {
                     path: __dirname + "/public",

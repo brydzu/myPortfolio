@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import {TweenMax} from "gsap";
-import Menu from './components/Menu';
-import Home from './components/Home';
-import Work from './components/Work';
+//components
+import Menu from './Menu';
+import Home from './Home';
+import Work from './Work';
 
 class App extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
 
         return (
             <div className="app">
+                {this.props.children}
                 <Menu changeState={this.changeState} search={this.search}></Menu>
                 <Home></Home>
                 <Work></Work>
@@ -28,4 +30,4 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(< App / >, document.getElementById('app'));
+export default App;
