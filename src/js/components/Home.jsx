@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-class Menu extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,11 +14,12 @@ class Menu extends Component {
         //  var x = ReactDOM.findDOMNode(this.refs.author);
         var tl = new TimelineLite();
 
-        const $MenuComp = $('.MenuComp');
+        const $HomeComp = $('.HomeComp');
         const $upperbox = $('.upperbox');
         const $navigation = $('.navigation');
+        // const $HomeComp = $('.HomeComp');
 
-        tl.to($MenuComp, 0, {
+        tl.to($HomeComp, 0, {
             className: '+=start',
             delay: 1
         }).to($upperbox, .3, {
@@ -26,6 +27,9 @@ class Menu extends Component {
         }).to($navigation, .3, {
             className: '+=start',
             delay: .4
+        }).to($HomeComp, 0, {
+            opacity: 1,
+            // delay: 1
         });
         // $body, {className: '-=loading'}
     }
@@ -34,24 +38,11 @@ class Menu extends Component {
 
     render() {
         return (
-            <div className="MenuComp">
-              <div className="upperbox">
-                            <div>
-                              <h1 className="title">Joe Santos Garcia</h1>
-                              <h3 className="sub-title">Frontend Engineer</h3>
-                              </div>
-              </div>
-
-
-                <nav className="navigation">
-                    <a href="">Work</a>
-                    <a href="">Resume</a>
-                    <a href="">Projects</a>
-                    <a href="">Contacts</a>
-                </nav>
+            <div className="HomeComp">
+              Swag
             </div>
         )
     }
 }
 
-export default Menu;
+export default Home;

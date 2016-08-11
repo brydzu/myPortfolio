@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './components/Menu';
 import $ from 'jquery';
+import {TweenMax} from "gsap";
+import Menu from './components/Menu';
+import Home from './components/Home';
+import Work from './components/Work';
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-
-        };
-
+        this.state = {};
 
     }
-    componentDidMount() {
-    }
 
-    loadData() {
-
-    }
+    loadData() {}
 
     render() {
 
         return (
             <div className="app">
                 <Menu changeState={this.changeState} search={this.search}></Menu>
-
+                <Home></Home>
+                <Work></Work>
             </div>
         )
     }

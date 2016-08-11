@@ -15,25 +15,33 @@ html {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 400px;
+  width: 100%;
   height: 100%;
   min-height: 500px;
-  padding: 0 20px;
+  padding: 0 30px;
   background: yellow;
   font-family: 'Amatic SC', cursive;
   transition: all 1s;
 }
 .MenuComp.start {
+  width: 350px;
+}
+.MenuComp.early {
   width: 100%;
 }
 .MenuComp .upperbox {
   width: 100%;
   height: 140px;
   overflow: hidden;
+  display: none;
+  margin-top: 50px;
 }
 .MenuComp .upperbox .title {
   font-size: 60px;
   margin-bottom: 0;
+}
+.MenuComp .upperbox.start {
+  display: block;
 }
 .MenuComp .upperbox.start div {
   animation-name: nameup;
@@ -42,58 +50,71 @@ html {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
 }
-.MenuComp nav.start {
-  display: block;
+.MenuComp .navigation {
+  display: none;
 }
-.MenuComp nav.start {
-  display: block;
-}
-.MenuComp nav.start a {
+.MenuComp .navigation a {
   font-family: 'Dancing Script', cursive;
   font-size: 28px;
   color: #000;
   display: block;
   cursor: pointer;
 }
-.MenuComp nav.start a:nth-child(1) {
+.MenuComp .navigation.start {
+  display: block;
+}
+.MenuComp .navigation.start a:nth-child(1) {
   opacity: 0;
   transition-delay: 1 s;
   animation-name: example;
-  animation-duration: .8s;
-  animation-delay: 0.325s;
+  animation-duration: .5s;
+  animation-delay: 0.125s;
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
 }
-.MenuComp nav.start a:nth-child(2) {
+.MenuComp .navigation.start a:nth-child(2) {
   opacity: 0;
   transition-delay: 2 s;
   animation-name: example;
-  animation-duration: .8s;
-  animation-delay: 0.65s;
+  animation-duration: .5s;
+  animation-delay: 0.25s;
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
 }
-.MenuComp nav.start a:nth-child(3) {
+.MenuComp .navigation.start a:nth-child(3) {
   opacity: 0;
   transition-delay: 3 s;
   animation-name: example;
-  animation-duration: .8s;
-  animation-delay: 0.975s;
+  animation-duration: .5s;
+  animation-delay: 0.375s;
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
 }
-.MenuComp nav.start a:nth-child(4) {
+.MenuComp .navigation.start a:nth-child(4) {
   opacity: 0;
   transition-delay: 4 s;
   animation-name: example;
-  animation-duration: .8s;
-  animation-delay: 1.3s;
+  animation-duration: .5s;
+  animation-delay: 0.5s;
   animation-direction: normal;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
+}
+
+.HomeComp {
+  width: 100%;
+  padding-left: 400px;
+  background: #00ff00 url("../img/joeoutside.jpg") no-repeat fixed top;
+  background-size: cover;
+  height: 100%;
+}
+
+.WorkComp {
+  width: 100%;
+  padding: 25px 15px 25px 415px;
 }
 
 @keyframes example {
@@ -108,10 +129,12 @@ html {
 }
 @keyframes nameup {
   from {
+    display: none;
     position: relative;
     transform: translate(0px, 500px);
   }
   to {
+    display: block;
     position: relative;
     transform: translate(0px, 0px);
   }
