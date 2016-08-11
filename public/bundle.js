@@ -81,15 +81,15 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Work = __webpack_require__(270);
+	var _Work = __webpack_require__(271);
 
 	var _Work2 = _interopRequireDefault(_Work);
 
-	var _routes = __webpack_require__(271);
+	var _routes = __webpack_require__(272);
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _reducers = __webpack_require__(273);
+	var _reducers = __webpack_require__(274);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -46524,6 +46524,12 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(176);
+
+	var _redux = __webpack_require__(183);
+
+	var _index = __webpack_require__(270);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -46591,10 +46597,39 @@
 	    return Home;
 	}(_react.Component);
 
-	exports.default = Home;
+	function mapStateToProps(state) {
+	    return {
+	        first: state.first
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return (0, _redux.bindActionCreators)({ FirstAction: _index.FirstAction }, dispatch);
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
 
 /***/ },
 /* 270 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.FirstAction = FirstAction;
+	var FIRST_ACTION = exports.FIRST_ACTION = 'FIRST_ACTION';
+
+	function FirstAction(item) {
+	  return {
+	    type: FIRST_ACTION,
+	    payload: item
+	  };
+	}
+
+/***/ },
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46829,7 +46864,7 @@
 	exports.default = Work;
 
 /***/ },
-/* 271 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46844,9 +46879,17 @@
 
 	var _reactRouter = __webpack_require__(204);
 
-	var _app = __webpack_require__(272);
+	var _app = __webpack_require__(273);
 
 	var _app2 = _interopRequireDefault(_app);
+
+	var _Home = __webpack_require__(269);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
+	var _Work = __webpack_require__(271);
+
+	var _Work2 = _interopRequireDefault(_Work);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46861,11 +46904,12 @@
 	exports.default = _react2.default.createElement(
 	  _reactRouter.Route,
 	  { path: '/', component: _app2.default },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/greet', component: greeting })
+	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/work', component: _Work2.default })
 	);
 
 /***/ },
-/* 272 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46898,7 +46942,7 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Work = __webpack_require__(270);
+	var _Work = __webpack_require__(271);
 
 	var _Work2 = _interopRequireDefault(_Work);
 
@@ -46935,10 +46979,8 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'app' },
-	                this.props.children,
-	                _react2.default.createElement(_Menu2.default, { changeState: this.changeState, search: this.search }),
-	                _react2.default.createElement(_Home2.default, null),
-	                _react2.default.createElement(_Work2.default, null)
+	                _react2.default.createElement(_Menu2.default, null),
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -46949,7 +46991,7 @@
 	exports.default = App;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46960,15 +47002,43 @@
 
 	var _redux = __webpack_require__(183);
 
-	var rootReducer = (0, _redux.combineReducers)({
-	  state: function state() {
-	    var _state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	var _FirstReducer = __webpack_require__(275);
 
-	    return _state;
-	  }
+	var _FirstReducer2 = _interopRequireDefault(_FirstReducer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var rootReducer = (0, _redux.combineReducers)({
+	  first: _FirstReducer2.default
 	});
 
 	exports.default = rootReducer;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = function () {
+	  var state = arguments.length <= 0 || arguments[0] === undefined ? INITIAL_STATE : arguments[0];
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case 'FIRST_ACTION':
+	      return _extends({}, state, { all: action.payload.data });
+	    default:
+	      return state;
+	  }
+	};
+
+	var INITIAL_STATE = { all: [], post: null };
 
 /***/ }
 /******/ ]);

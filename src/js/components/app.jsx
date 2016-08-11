@@ -21,10 +21,9 @@ class App extends Component {
 
         return (
             <div className="app">
+
+                <Menu></Menu>
                 {this.props.children}
-                <Menu changeState={this.changeState} search={this.search}></Menu>
-                <Home></Home>
-                <Work></Work>
             </div>
         )
     }

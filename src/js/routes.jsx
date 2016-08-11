@@ -2,6 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
+import Home from './components/Home';
+import Work from './components/Work';
 
 const greeting = ()=>{
   return <div>Hey there</div>
@@ -9,6 +11,7 @@ const greeting = ()=>{
 
 export default (
   <Route path="/" component={App} >
-    <Route path="/greet" component={greeting}></Route>
+    <IndexRoute component={Home}></IndexRoute>
+    <Route path="/work" component={Work}></Route>
   </Route>
 );
