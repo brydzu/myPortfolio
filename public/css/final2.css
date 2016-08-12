@@ -138,10 +138,27 @@ html {
   -webkit-animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
           animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
 }
+.MenuComp .navigation.start a:nth-child(5) {
+  opacity: 0;
+  -webkit-transition-delay: 5 s;
+          transition-delay: 5 s;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-delay: 0.625s;
+          animation-delay: 0.625s;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
+          animation-timing-function: cubic-bezier(0.44, 0.27, 0.64, 0.92);
+}
 
 .HomeComp {
   width: 100%;
-  padding-left: 400px;
+  padding-left: 350px;
   background: #00ff00 url("../img/joeoutside.jpg") no-repeat fixed top;
   background-size: cover;
   height: 100%;
@@ -149,7 +166,7 @@ html {
 
 .WorkComp {
   width: 100%;
-  padding: 25px 15px 25px 415px;
+  padding: 25px 15px 25px 365px;
 }
 
 @-webkit-keyframes example {

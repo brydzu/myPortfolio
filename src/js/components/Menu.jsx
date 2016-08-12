@@ -11,7 +11,7 @@ class Menu extends Component {
 
         // this.updateInputs = this.updateInputs.bind(this);
     }
-    
+
 
     updateInputs(key, event) {}
 
@@ -28,8 +28,9 @@ class Menu extends Component {
 
                 <nav className="navigation">
                     <Link to="work">Work</Link>
-                    <Link to="/">Resume</Link>
+                    <Link to="joe_santos_resume.pdf">Resume</Link>
                     <Link to="projects">Projects</Link>
+                    <Link to="skills">Skills</Link>
                     <Link to="contacts">Contacts</Link>
                 </nav>
             </div>

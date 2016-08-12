@@ -46466,13 +46466,18 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: '/' },
+	                        { to: 'joe_santos_resume.pdf' },
 	                        'Resume'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
 	                        { to: 'projects' },
 	                        'Projects'
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: 'skills' },
+	                        'Skills'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,

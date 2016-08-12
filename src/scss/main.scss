@@ -61,7 +61,7 @@ html {
       }
       &.start {
       display: block;
-        @for $i from 1 through 4 {
+        @for $i from 1 through 5 {
             a:nth-child(#{$i}) {
                 opacity: 0;
                 transition-delay: $i s;
@@ -79,7 +79,7 @@ html {
 
 .HomeComp{
   width: 100%;
-  padding-left: 400px;
+  padding-left: 350px;
   background: #00ff00 url("../img/joeoutside.jpg") no-repeat fixed top;
   background-size: cover;
   height: 100%;
@@ -87,7 +87,7 @@ html {
 
 .WorkComp{
   width: 100%;
-  padding: 25px 15px 25px 415px;
+  padding: 25px 15px 25px 365px;
 
 
 }
