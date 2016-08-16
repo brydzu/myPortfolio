@@ -168,6 +168,9 @@ html {
   width: 100%;
   padding: 25px 15px 25px 365px;
 }
+.WorkComp p strong {
+  margin-right: 3px;
+}
 
 @-webkit-keyframes example {
   from {

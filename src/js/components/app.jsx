@@ -11,51 +11,49 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            loading: false
+        };
 
     }
-    startmenu(){
-      //  var x = ReactDOM.findDOMNode(this.refs.author);
-      var tl = new TimelineLite();
+    startmenu() {
+        //  var x = ReactDOM.findDOMNode(this.refs.author);
+        var tl = new TimelineLite();
 
-      const $MenuComp = $('.MenuComp');
-      const $upperbox = $('.upperbox');
-      const $navigation = $('.navigation');
+        const $MenuComp = $('.MenuComp');
+        const $upperbox = $('.upperbox');
+        const $navigation = $('.navigation');
 
-      tl.to($MenuComp, 0, {
-          className: '+=start',
-          delay: 1
-      }).to($upperbox, .3, {
-          className: '+=start'
-      }).to($navigation, .3, {
-          className: '+=start',
-          delay: .4
-      });
-      // $body, {className: '-=loading'}
+        tl.to($MenuComp, 0, {
+            className: '+=start',
+            delay: 1
+        }).to($upperbox, .3, {className: '+=start'}).to($navigation, .3, {
+            className: '+=start',
+            delay: .4
+        });
+        // $body, {className: '-=loading'}
     }
-    turnoffmenu(){
-      //  var x = ReactDOM.findDOMNode(this.refs.author);
-      var tl = new TimelineLite();
+    turnoffmenu() {
+        //  var x = ReactDOM.findDOMNode(this.refs.author);
+        var tl = new TimelineLite();
 
-      const $MenuComp = $('.MenuComp');
-      const $upperbox = $('.upperbox');
-      const $navigation = $('.navigation');
+        const $MenuComp = $('.MenuComp');
+        const $upperbox = $('.upperbox');
+        const $navigation = $('.navigation');
 
-      tl.to($MenuComp, 0, {
-          className: '-=start',
-          delay: 1
-      }).to($upperbox, .3, {
-          className: '-=start'
-      }).to($navigation, .3, {
-          className: '-=start',
-          delay: .4
-      });
+        tl.to($MenuComp, 0, {
+            className: '-=start',
+            delay: 1
+        }).to($upperbox, .3, {className: '-=start'}).to($navigation, .3, {
+            className: '-=start',
+            delay: .4
+        });
     }
     componentDidMount() {
-      this.startmenu();
+        this.startmenu();
     }
-    componentWillUnmount(){
-      this.turnoffmenu();
+    componentWillUnmount() {
+        // this.turnoffmenu();
     }
 
     loadData() {}
@@ -66,7 +64,7 @@ class App extends Component {
             <div className="app">
 
                 <Menu></Menu>
-                {this.props.children}
+                {this.props.children && React.cloneElement(this.props.children, {turnoffmenu: this.turnoffmenu})}
             </div>
         )
     }

@@ -89,7 +89,7 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _reducers = __webpack_require__(274);
+	var _reducers = __webpack_require__(275);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -46466,13 +46466,13 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: 'joe_santos_resume.pdf' },
+	                        { to: 'joe_santos_resume.pdf', target: 'new' },
 	                        'Resume'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
 	                        { to: 'projects' },
-	                        'Projects'
+	                        'Personal Projects'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
@@ -46481,7 +46481,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: 'contacts' },
+	                        { to: '/' },
 	                        'Contacts'
 	                    )
 	                )
@@ -46548,11 +46548,7 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'HomeComp' },
-	                'Swag'
-	            );
+	            return _react2.default.createElement('div', { className: 'HomeComp' });
 	        }
 	    }]);
 
@@ -46560,13 +46556,13 @@
 	}(_react.Component);
 
 	function mapStateToProps(state) {
-	    return {
-	        first: state.first
-	    };
+	    return { first: state.first };
 	}
 
 	function mapDispatchToProps(dispatch) {
-	    return (0, _redux.bindActionCreators)({ FirstAction: _index.FirstAction }, dispatch);
+	    return (0, _redux.bindActionCreators)({
+	        FirstAction: _index.FirstAction
+	    }, dispatch);
 	}
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Home);
@@ -46594,7 +46590,7 @@
 /* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -46620,226 +46616,170 @@
 	    function Work(props) {
 	        _classCallCheck(this, Work);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Work).call(this, props));
-
-	        _this.state = {
-	            street: '',
-	            state: '',
-	            city: ''
-	        };
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Work).call(this, props));
 
 	        // this.updateInputs = this.updateInputs.bind(this);
-	        return _this;
 	    }
 
 	    _createClass(Work, [{
-	        key: 'startmenu',
-	        value: function startmenu() {
-	            //  var x = ReactDOM.findDOMNode(this.refs.author);
-	            var tl = new TimelineLite();
-
-	            var $MenuComp = $('.MenuComp');
-	            var $upperbox = $('.upperbox');
-	            var $navigation = $('.navigation');
-
-	            tl.to($MenuComp, 0, {
-	                className: '+=start',
-	                delay: 1
-	            }).to($upperbox, .3, {
-	                className: '+=start'
-	            }).to($navigation, .3, {
-	                className: '+=start',
-	                delay: .4
-	            });
-	            // $body, {className: '-=loading'}
-	        }
-	        // turnoffmenu(){
-	        //   //  var x = ReactDOM.findDOMNode(this.refs.author);
-	        //   var tl = new TimelineLite();
-	        //
-	        //   const $MenuComp = $('.MenuComp');
-	        //   const $upperbox = $('.upperbox');
-	        //   const $navigation = $('.navigation');
-	        //
-	        //   tl.to($MenuComp, 0, {
-	        //       className: '-=start',
-	        //       delay: 1
-	        //   }).to($upperbox, .3, {
-	        //       className: '-=start'
-	        //   }).to($navigation, .3, {
-	        //       className: '-=start',
-	        //       delay: .4
-	        //   });
-	        // }
-	        // componentDidMount() {
-	        //   this.startmenu();
-	        // }
-	        // componentWillUnmount(){
-	        //   this.turnoffmenu();
-	        // }
-
-	    }, {
-	        key: 'updateInputs',
-	        value: function updateInputs(key, event) {}
-	    }, {
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
-	                { className: 'WorkComp' },
+	                "div",
+	                { className: "WorkComp" },
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'row box ' },
+	                    "div",
+	                    { className: "row box " },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
-	                        _react2.default.createElement('img', { src: 'img/epa/epa-imac.png ', width: '100% ' })
+	                        "div",
+	                        { className: "col-md-6 " },
+	                        _react2.default.createElement("img", { src: "img/epa/epa-imac.png ", width: "100% " })
 	                    ),
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
+	                        "div",
+	                        { className: "col-md-6 " },
 	                        _react2.default.createElement(
-	                            'h1',
+	                            "h1",
 	                            null,
-	                            'EPA RRP Online'
+	                            "EPA RRP Online"
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Target:'
+	                                "Target:"
 	                            ),
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'https://www.eparrponline.com/', target: 'new' },
-	                                'https://www.eparrponline.com/'
+	                                "a",
+	                                { href: "https://www.eparrponline.com/", target: "new" },
+	                                "https://www.eparrponline.com/"
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Company:'
+	                                "Company:"
 	                            ),
-	                            'Able Safety LLC.'
+	                            "Able Safety LLC."
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Description:'
+	                                "Description:"
 	                            ),
-	                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ornare orci nisi, at tristique libero varius quis. Fusce placerat elit eget feugiat vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu interdum nisi. Curabitur felis tortor, luctus vel mauris a, consectetur pharetra urna. Pellentesque at dui quis tellus luctus consectetur. Sed diam est, elementum ac rutrum at, posuere vel nibh. Nunc ultrices tempus ultrices. Aenean molestie urna et diam ultrices mollis. Maecenas ultrices ante id neque porttitor molestie.'
+	                            "Built a Learning Management System (LMS) EPARRPONLINE.COM Designed the front end of the site and admin interface of the LMS. Managed a team of 4 in house web developers and 2 remote developers. Tools used to built the site were Angular JS, Laravel (PHP), Git Bitbucket (sourceTree)."
 	                        )
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'row box ' },
+	                    "div",
+	                    { className: "row box " },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
-	                        _react2.default.createElement('img', { src: 'img/epa/asme-imac.png', width: '100% ' })
+	                        "div",
+	                        { className: "col-md-6 " },
+	                        _react2.default.createElement("img", { src: "img/epa/asme-imac.png", width: "100% " })
 	                    ),
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
+	                        "div",
+	                        { className: "col-md-6 " },
 	                        _react2.default.createElement(
-	                            'h1',
+	                            "h1",
 	                            null,
-	                            'The American Society of Mechanical Engineers'
+	                            "The American Society of Mechanical Engineers"
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Target:'
+	                                "Target:"
 	                            ),
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'https://www.asme.org/', target: 'new' },
-	                                'https://www.asme.org/'
+	                                "a",
+	                                { href: "https://www.asme.org/", target: "new" },
+	                                "https://www.asme.org/"
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Company:'
+	                                "Company:"
 	                            ),
-	                            'ASME Corp.'
+	                            "ASME Corp."
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Description:'
+	                                "Description:"
 	                            ),
-	                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ornare orci nisi, at tristique libero varius quis. Fusce placerat elit eget feugiat vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu interdum nisi. Curabitur felis tortor, luctus vel mauris a, consectetur pharetra urna. Pellentesque at dui quis tellus luctus consectetur. Sed diam est, elementum ac rutrum at, posuere vel nibh. Nunc ultrices tempus ultrices. Aenean molestie urna et diam ultrices mollis. Maecenas ultrices ante id neque porttitor molestie.'
+	                            "Maintained website by adding new content. Created new UI features using HTML & Jquery. Helped launch new sections for users. Created HTML email campaigns. Worked in a small team environment."
 	                        )
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'row box ' },
+	                    "div",
+	                    { className: "row box " },
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
-	                        _react2.default.createElement('img', { src: 'img/epa/omni-imac.png ', width: '100% ' })
+	                        "div",
+	                        { className: "col-md-6 " },
+	                        _react2.default.createElement("img", { src: "img/epa/omni-imac.png ", width: "100% " })
 	                    ),
 	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'col-md-6 ' },
+	                        "div",
+	                        { className: "col-md-6 " },
 	                        _react2.default.createElement(
-	                            'h1',
+	                            "h1",
 	                            null,
-	                            'Omni Fitness Center'
+	                            "Omni Fitness Center"
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Target:'
+	                                "Target:"
 	                            ),
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: 'http://www.theomnifitnesscenter.com/', target: 'new' },
-	                                'http://www.theomnifitnesscenter.com/'
+	                                "a",
+	                                { href: "http://www.theomnifitnesscenter.com/", target: "new" },
+	                                "http://www.theomnifitnesscenter.com/"
 	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Company:'
+	                                "Company:"
 	                            ),
-	                            'Omni Group.'
+	                            "Omni Group."
 	                        ),
 	                        _react2.default.createElement(
-	                            'p',
+	                            "p",
 	                            null,
 	                            _react2.default.createElement(
-	                                'strong',
+	                                "strong",
 	                                null,
-	                                'Description:'
+	                                "Description:"
 	                            ),
-	                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ornare orci nisi, at tristique libero varius quis. Fusce placerat elit eget feugiat vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu interdum nisi. Curabitur felis tortor, luctus vel mauris a, consectetur pharetra urna. Pellentesque at dui quis tellus luctus consectetur. Sed diam est, elementum ac rutrum at, posuere vel nibh. Nunc ultrices tempus ultrices. Aenean molestie urna et diam ultrices mollis. Maecenas ultrices ante id neque porttitor molestie.'
+	                            "Built the front end of the web site in collaboration with another designer in Cats Eye Webs. This site was made in php using drupal as the Content Management System."
 	                        )
 	                    )
 	                )
@@ -46859,7 +46799,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(2);
@@ -46880,21 +46820,18 @@
 
 	var _Work2 = _interopRequireDefault(_Work);
 
+	var _Projects = __webpack_require__(274);
+
+	var _Projects2 = _interopRequireDefault(_Projects);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var greeting = function greeting() {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    'Hey there'
-	  );
-	};
-
 	exports.default = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _app2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/work', component: _Work2.default })
+	    _reactRouter.Route,
+	    { path: '/', component: _app2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/work', component: _Work2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/projects', component: _Projects2.default })
 	);
 
 /***/ },
@@ -46953,7 +46890,9 @@
 
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
 
-	        _this.state = {};
+	        _this.state = {
+	            loading: false
+	        };
 
 	        return _this;
 	    }
@@ -46971,9 +46910,7 @@
 	            tl.to($MenuComp, 0, {
 	                className: '+=start',
 	                delay: 1
-	            }).to($upperbox, .3, {
-	                className: '+=start'
-	            }).to($navigation, .3, {
+	            }).to($upperbox, .3, { className: '+=start' }).to($navigation, .3, {
 	                className: '+=start',
 	                delay: .4
 	            });
@@ -46992,9 +46929,7 @@
 	            tl.to($MenuComp, 0, {
 	                className: '-=start',
 	                delay: 1
-	            }).to($upperbox, .3, {
-	                className: '-=start'
-	            }).to($navigation, .3, {
+	            }).to($upperbox, .3, { className: '-=start' }).to($navigation, .3, {
 	                className: '-=start',
 	                delay: .4
 	            });
@@ -47007,7 +46942,7 @@
 	    }, {
 	        key: 'componentWillUnmount',
 	        value: function componentWillUnmount() {
-	            this.turnoffmenu();
+	            // this.turnoffmenu();
 	        }
 	    }, {
 	        key: 'loadData',
@@ -47020,7 +46955,7 @@
 	                'div',
 	                { className: 'app' },
 	                _react2.default.createElement(_Menu2.default, null),
-	                this.props.children
+	                this.props.children && _react2.default.cloneElement(this.props.children, { turnoffmenu: this.turnoffmenu })
 	            );
 	        }
 	    }]);
@@ -47034,6 +46969,59 @@
 /* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Projects = function (_Component) {
+	    _inherits(Projects, _Component);
+
+	    function Projects(props) {
+	        _classCallCheck(this, Projects);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Projects).call(this, props));
+	    }
+
+	    _createClass(Projects, [{
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "ProjectsComp" },
+	                _react2.default.createElement(
+	                    "h1",
+	                    null,
+	                    "Projects Will be Updated soon but for now you can check out my github account."
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Projects;
+	}(_react.Component);
+
+	exports.default = Projects;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -47042,7 +47030,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _FirstReducer = __webpack_require__(275);
+	var _FirstReducer = __webpack_require__(276);
 
 	var _FirstReducer2 = _interopRequireDefault(_FirstReducer);
 
@@ -47055,7 +47043,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports) {
 
 	'use strict';
