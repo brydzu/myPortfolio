@@ -46417,27 +46417,48 @@
 	    function Menu(props) {
 	        _classCallCheck(this, Menu);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Menu).call(this, props));
-
-	        _this.state = {
-	            street: '',
-	            state: '',
-	            city: ''
-	        };
-
-	        // this.updateInputs = this.updateInputs.bind(this);
-	        return _this;
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Menu).call(this, props));
 	    }
 
 	    _createClass(Menu, [{
-	        key: 'updateInputs',
-	        value: function updateInputs(key, event) {}
+	        key: 'menulinks',
+	        value: function menulinks() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: 'work' },
+	                    'Work'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: 'projects' },
+	                    'Personal Projects'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: 'joe_santos_resume.pdf', target: 'new' },
+	                    'Resume'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Skills'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Contacts'
+	                )
+	            );
+	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'MenuComp' },
+	                { className: 'MenuComp close-menu' },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'upperbox' },
@@ -46457,33 +46478,24 @@
 	                    )
 	                ),
 	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'mobile-menu' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        null,
+	                        _react2.default.createElement(
+	                            'h1',
+	                            { className: 'title' },
+	                            'Joe Santos Garcia'
+	                        )
+	                    ),
+	                    _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' }),
+	                    this.menulinks()
+	                ),
+	                _react2.default.createElement(
 	                    'nav',
 	                    { className: 'navigation' },
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: 'work' },
-	                        'Work'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: 'projects' },
-	                        'Personal Projects'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: 'joe_santos_resume.pdf', target: 'new' },
-	                        'Resume'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/' },
-	                        'Skills'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
-	                        { to: '/' },
-	                        'Contacts'
-	                    )
+	                    this.menulinks()
 	                )
 	            );
 	        }
