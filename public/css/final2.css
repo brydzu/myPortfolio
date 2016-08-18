@@ -172,6 +172,10 @@ html {
   margin-right: 3px;
 }
 
+.ProjectsComp {
+  padding: 25px 15px 25px 365px;
+}
+
 @-webkit-keyframes example {
   from {
     padding-left: -60px;

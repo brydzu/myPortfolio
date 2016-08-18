@@ -26,9 +26,9 @@ class Menu extends Component {
 
                 <nav className="navigation">
                     <Link to="work">Work</Link>
-                    <Link to="joe_santos_resume.pdf" target="new">Resume</Link>
                     <Link to="projects">Personal Projects</Link>
-                    <Link to="skills">Skills</Link>
+                    <Link to="joe_santos_resume.pdf" target="new">Resume</Link>
+                    <Link to="/">Skills</Link>
                     <Link to="/">Contacts</Link>
                 </nav>
             </div>

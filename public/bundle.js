@@ -46466,17 +46466,17 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: 'joe_santos_resume.pdf', target: 'new' },
-	                        'Resume'
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactRouter.Link,
 	                        { to: 'projects' },
 	                        'Personal Projects'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactRouter.Link,
-	                        { to: 'skills' },
+	                        { to: 'joe_santos_resume.pdf', target: 'new' },
+	                        'Resume'
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactRouter.Link,
+	                        { to: '/' },
 	                        'Skills'
 	                    ),
 	                    _react2.default.createElement(
@@ -46972,7 +46972,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -46990,30 +46990,36 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Projects = function (_Component) {
-	    _inherits(Projects, _Component);
+		_inherits(Projects, _Component);
 
-	    function Projects(props) {
-	        _classCallCheck(this, Projects);
+		function Projects(props) {
+			_classCallCheck(this, Projects);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Projects).call(this, props));
-	    }
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Projects).call(this, props));
+		}
 
-	    _createClass(Projects, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "ProjectsComp" },
-	                _react2.default.createElement(
-	                    "h1",
-	                    null,
-	                    "Projects Will be Updated soon but for now you can check out my github account."
-	                )
-	            );
-	        }
-	    }]);
+		_createClass(Projects, [{
+			key: "render",
+			value: function render() {
+				return _react2.default.createElement(
+					"div",
+					{ className: "ProjectsComp" },
+					_react2.default.createElement(
+						"h1",
+						null,
+						"Projects Will be Updated soon but for now you can check out my ",
+						_react2.default.createElement(
+							"a",
+							{ href: "http://www.github.com/jaysg", target: "new" },
+							"github account"
+						),
+						"."
+					)
+				);
+			}
+		}]);
 
-	    return Projects;
+		return Projects;
 	}(_react.Component);
 
 	exports.default = Projects;
